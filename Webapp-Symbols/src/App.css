@@ -1,0 +1,68 @@
+:root {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --text: #0f1b2d;
+  --muted: #4a5a70;
+  --border: #d5deea;
+  --primary: #0067b8;
+  --primary-dark: #0b2545;
+  --primary-tint: #eaf3fc;
+  --success: #107c41;
+  --success-tint: #e3f5ea;
+  --shadow: 0 1px 3px rgba(11, 37, 69, 0.08), 0 4px 12px rgba(11, 37, 69, 0.06);
+}
+
+body { background: var(--bg); color: var(--text); line-height: 1.5; }
+
+.top {
+  background: linear-gradient(120deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.top-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.top h1 { margin: 0; font-size: 1.6rem; letter-spacing: 0.02em; }
+
+.switch { display: inline-flex; gap: 0.25rem; padding: 0.25rem; background: rgba(255, 255, 255, 0.14); border-radius: 999px; }
+.switch button { padding: 0.45rem 1.1rem; border: 0; border-radius: 999px; background: transparent; color: #e6f1fc; font-size: 1rem; font-weight: 600; cursor: pointer; }
+.switch button:hover { background: rgba(255, 255, 255, 0.18); }
+.switch button.active { background: #fff; color: var(--primary-dark); }
+.switch button:focus-visible, .copy:focus-visible, .icon:focus-visible, .tile:focus-visible, .search:focus-visible { outline: 3px solid #50b8ff; outline-offset: 2px; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+h2 { margin: 0 0 0.25rem; color: var(--primary-dark); font-size: 1.4rem; }
+.hint { margin: 0 0 1rem; color: var(--muted); }
+
+.search { width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; font-size: 1rem; color: var(--text); background: var(--surface); border: 2px solid var(--border); border-radius: 10px; box-shadow: var(--shadow); }
+.search:focus { border-color: var(--primary); }
+.count { margin: 0.5rem 0; color: var(--muted); font-size: 0.85rem; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+thead th { background: var(--primary-dark); color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+th.category { padding-top: 0.9rem; padding-bottom: 0.9rem; font-size: 1rem; color: var(--primary-dark); background: var(--primary-tint); border-left: 4px solid var(--primary); }
+tbody tr:not(:has(th)):hover td { background: #f7fafe; }
+tbody:last-child tr:last-child td { border-bottom: 0; }
+
+.copy { font-family: ui-monospace, Consolas, monospace; font-size: 0.95rem; font-weight: 600; padding: 0.25rem 0.75rem; cursor: pointer; border: 1px solid #9cc4e8; background: var(--primary-tint); color: #004e8c; border-radius: 999px; }
+.copy:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.resource { display: flex; align-items: center; gap: 0.75rem; }
+.icon { width: 36px; height: 36px; flex: none; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 1px solid transparent; border-radius: 8px; background: none; }
+button.icon { cursor: pointer; }
+button.icon:hover { border-color: var(--primary); background: var(--primary-tint); }
+button.icon.copied { border-color: var(--success); background: var(--success-tint); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+.tile { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 1.25rem 0.75rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font-size: 0.95rem; font-weight: 600; text-align: center; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.12s, border-color 0.12s; }
+.tile:hover { transform: translateY(-2px); border-color: var(--primary); }
+.tile.copied { border-color: var(--success); background: var(--success-tint); color: var(--success); }
